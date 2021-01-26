@@ -222,3 +222,11 @@ function _minikube() {
         echo $x
     }
 }
+
+function _git() {
+    executable=$(_check_exectable git)
+    [[ $? -eq 0 ]] && {
+        x=$($executable --version | sed -n 's/git version \(.*\)/\1/p')
+        echo $x
+    }
+}
